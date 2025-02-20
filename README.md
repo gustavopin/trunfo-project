@@ -15,6 +15,7 @@ First step is choosing the State: composed of a letter from A to H (representing
 Second comes the Code: it is a number from 01 to 04 and will. Latter card code will be represented by the State+Code, forming the whole card code, like A01, B04, and so on.
 Third is the City Name.
 Then, you will fill the information that will be used in the game: Population, Area, BIP and Number of Turistic Spots.
+Information like Population Density and BIP per capta will be automatically calculated.
 
 
 ### Instructions for the game
@@ -33,3 +34,5 @@ Population and Turistic Spots are integers and don't need decimals.
 The program itself is not complex and uses simples lines of code to make the cards: only "printf" and "scanf".
 To not deviate from those two commands the is a command " %[^\n]" for the cityX variable. This commands enable us to use spaces in the string array, like "São Paulo". Without it we would need to use single word names or no spaces ("SaoPaulo).
 Code is not given as a whole (like A01), instead I chose to make it a string of numbers (01, 02, 03, etc) so I can add it to the State variable latter. As it is, the state does not become repetitive to insert.
+percapta is a variable to indicate BIP/ per person of the city and is calculated by dividing the total BIP and population.
+Population density is expressed by the variable "dens" and is calculated by dividing the total population by the area of the city.

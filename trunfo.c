@@ -3,7 +3,7 @@
 int main() {
     //variables
     int pop1, pop2, point1, point2;
-    float pib1, pib2, area1, area2;
+    float pib1, pib2, area1, area2, dens1, dens2, percapita1, percapita2;
     char city1[50], city2[50], code1[10], code2[10];
     char state1, state2;
 
@@ -31,6 +31,13 @@ int main() {
     printf("Number of Turistic Spots: ");
     scanf("%d", &point1);
 
+    //calculating population density and BIP per capita of CARD 1
+    //population density
+    dens1 = (float) pop1/area1;
+
+    //BIP per capita
+    percapita1 = (float) pib1/pop1;
+
     //card2
     printf("\n\nBellow you will type the informations about Card 2: \n\n");
     printf("State: ");
@@ -48,6 +55,12 @@ int main() {
     printf("Number of Turistic Spots: ");
     scanf("%d", &point2);
 
+    //calculating population density and BIP per capita of CARD 2
+    //population density
+    dens2 = (float) pop2/area2;
+
+    //BIP per capita
+    percapita2 = (float) pib2/pop2;
     printf("\n\nThe cards you created are: ");
 
     //printing the information card1
@@ -58,6 +71,8 @@ int main() {
     printf("City Area: %.2f\n", area1);
     printf("BIP: %.2f billions of BRL\n", pib1);
     printf("Turistic Spots: %d\n", point1);
+    printf("Population Density: %.2f hab/km2\n", dens1);
+    printf("BIP per capita: %.2f BRL\n", percapita1);
 
     //printing the information card2
     printf("\nCard Code: %c%s\n", state2, code2);
@@ -67,6 +82,8 @@ int main() {
     printf("City Area: %.2f\n", area2);
     printf("BIP: %.2f billions of BRL\n", pib2);
     printf("Turistic Spots: %d\n", point2);
+    printf("Population Density: %.2f hab/km2\n", dens1);
+    printf("BIP per capita: %.2f BRL\n", percapita1);
     
     return 0;
 }
