@@ -3,13 +3,13 @@
 int main() {
     //variables
     int spot1, spot2;
-    int res_pop, res_area, res_spot;
+    int option,information;
     unsigned long int pop1, pop2;
     float pib1, pib2, area1, area2, dens1, dens2, percapita1, percapita2;
     float super1, super2;
-    float res_pib, res_dens, res_percapita, res_super;
     char city1[50], city2[50], code1[10], code2[10];
     char state1, state2;
+
 
     //Welcome and Instructions
     printf("Hi, welcome to Super Trunfo! Here are the instructions:");
@@ -68,11 +68,12 @@ int main() {
 
     //BIP per capita
     percapita2 = (pib2*1000000000)/(float)pop2;
-    printf("\n\nThe cards you created are: ");
 
     //calculating super power value
     super2 = (float)pop2 + (float)area2 + pib2 + (float)spot2 + percapita2 + (1/dens2);
 
+
+    printf("\n\nThe cards you created are: ");
     //printing the information card1
     printf("\n\nCard Code: %c%s\n", state1, code1);
     printf("State: %c\n", state1);
@@ -95,26 +96,93 @@ int main() {
     printf("Turistic Spots: %d\n", spot2);
     printf("Population Density: %.2f hab/km2\n", dens2);
     printf("BIP per capita: %.2f BRL\n", percapita2);
-    printf("SUPER POWER: %.2f\n", super2);
+    printf("SUPER POWER: %.2f\n", super2);    
     
-    //Card comparison
-    //this will determine what card wins in that category, 1 will represent the WIN and to CARD1 and 0 will represent the WIN to CARD2
-    res_pop = pop1 > pop2;
-    res_area = area1 > area2;
-    res_pib = pib1 > pib2;
-    res_spot = spot1 > spot2;
-    res_dens = dens1 < dens2;
-    res_percapita = percapita1 > percapita2;
-    res_super = super1 > super2;
+    printf("\nNo information will be shown, continue top the next step of the game\n");
 
-    //results for the comparison
-    printf("\n\nPopulation: %d", res_pop);
-    printf("\nArea: %d", res_area);
-    printf("\nBIP: %.0f", res_pib);
-    printf("\nTuristic Spots: %d", res_spot);
-    printf("\nPopulation Density: %.0f", res_dens);
-    printf("\nBIP per capita: %.0f", res_percapita);
-    printf("\nSUPER POWER: %.0f", res_super);
+    //Card comparison
+    //this will determine what card wins in the chosen category
+    printf("\nChoose one category from the cards (1-7): ");
+    printf("\n1 - Population");
+    printf("\n2 - Area");
+    printf("\n3 - BIP");
+    printf("\n4 - Turistic Spots");
+    printf("\n5 - Population Density");
+    printf("\n6 - Bip per capita");
+    printf("\n7 - SUPER POWER\n");
+    printf("\nCategory: ");
+    scanf("%d", &option);
+
+    //declaration of the winner
+    //if population is chosen
+    if (option == 1){
+        if (pop1 > pop2){
+            printf("\nCARD 1 WINS (%s with %d)", city1, pop1);
+        }
+        else{
+            printf("\nCARD 2 WINS (%s with %d)", city1, pop2);
+        }
+    }
+
+    //if area is chosen
+    if (option == 2){
+        if (area1 > area2){
+            printf("\nCARD 1 WINS (%s with %.2f)", city1, area1);
+        }
+        else{
+            printf("\nCARD 2 WINS (%s with %.2f)", city2, area2);
+        }
+    }
+
+    //if BIP is chosen
+    if (option == 3){
+        if (pib1 > pib2){
+            printf("\nCARD 1 WINS (%s with %.2f)", city1, pib1);
+        }
+        else{
+            printf("\nCARD 2 WINS (%s with %.2f)", city2, pib2);
+        }
+    }
+
+    //if turistic spots is chosen
+    if (option == 4){
+        if (spot1 > spot2){
+            printf("CARD 1 WINS (%s with %d)", city1, spot1);
+        }
+        else{
+            printf("CARD 2 WINS (%s with %d)", city2, spot2);
+        }
+    }
+
+    //if population density is chosen
+    if (option == 5){
+        if (dens1 < dens2){
+            printf("CARD 1 WINS (%s with %.2f)", city1, dens1);
+        }
+        else{
+            printf("CARD 2 WINS (%s with %.2f)", city2, dens2);
+        }
+    }
+
+    //if BIP per capita is chosen
+    if (option == 6){
+        if (percapita1 > percapita2){
+            printf("CARD 1 WINS (%s with %.2f)", city2, percapita1);
+        }
+        else{
+            printf("CARD 2 WINS (%s with %.2f)", city2, percapita2);
+        }
+    }
+
+    //if SUPER POWER was chosen
+    if (option == 7){
+        if (super1 > super2){
+            printf("CARD 1 WINS (%s with %.2f)", city1, super1);
+        }
+        else{
+            printf("CARD 2 WINS (%s with %.2f)", city2, super2);
+        }
+    }
 
     return 0;
 }

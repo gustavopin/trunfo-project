@@ -19,7 +19,7 @@ Third is the City Name.
 
 Then, you will fill the information that will be used in the game: Population, Area, BIP and Number of Turistic Spots.
 
-Information like Population Density and BIP per capta will be automatically calculated.
+Information like Population Density, BIP per capta and SUPER POWER will be automatically calculated.
 
 
 ### Instructions for the game
@@ -27,7 +27,7 @@ Information like Population Density and BIP per capta will be automatically calc
 The game is simple:
 
 You will get a card, than choose one of the stats of that card that you think is the most strong and you and your oppenent will reveal the number of that stat. In this case, the highest number wins and takes the opponent card, except for the desity, here the lowest the better.
-The program will show a comparison at the end indicating 1 and 0. If 1 is shown, than the first CARD wins, if 0 than the second CARD wins.
+Last you will choose one of the 7 categories to play against the other card.
 
 
 ### Example
@@ -60,17 +60,13 @@ CARD2:
 - Bip per Capita: 44532.91 BRL
 - SUPER POWER: 6749530.500
 
+Lastly they choose one of the 7 categories to see what number is higher (REMEMBER: Population Density is the only category that will win if the number is lower!).
+
 Here Maria would win in the following categories: Population, Area, BIP, Turistic Spots, BIP per capita and SUPER POWER, but would lose to Jose in the Population Density, as the lower it is the better.
 
-This will be shown in the code like:
+The final message will show what CARD wins, the name of the card and the value of the category like (if the category chosen was population):
 
-- Population: 1
-- Area: 1
-- BIP: 1.00
-- Turistic Spots: 1
-- Population Density: 0.00
-- BIP per capita: 1.00
-- Super: 1.00
+CARD 1 WINS (São Paulo with 12325000)
 
 
 ### Technical informations
@@ -86,4 +82,5 @@ This will be shown in the code like:
 - percapta is a variable to indicate BIP/ per person of the city and is calculated by dividing the total BIP and population.
 - Population density is expressed by the variable "dens" and is calculated by dividing the total population by the area of the city.
 - There are 7 variables to show results for the comparisons that the program will do at the final stage of the game. They are both float and int depending on what type the original was (pop1 and pop2 are int, so res_pop will be too).
-- The comparison is a simple CARD1 > CARD2, there are no ifs, elses our fors.
+- The comparison is done with if/else functions.
+- The message at the end will show the card won, the name of the city and the value of the chosen category.
